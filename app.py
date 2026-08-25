@@ -1771,35 +1771,31 @@ button[role="tab"].selected::after {
     width: 0 !important;
 }
 
-/* Tab wrapper centering */
-.tab-wrapper,
-div.tabs > div:first-child,
-div[data-testid="tabs"] > div:first-child {
+/* Segmented Navigation Tab Pill Group */
+.tabs,
+div[data-testid="tabs"] {
     display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
     width: 100% !important;
-    margin: 4px auto 30px auto !important;
-    padding: 0 !important;
-    border: none !important;
     background: transparent !important;
-    box-shadow: none !important;
+    border: none !important;
 }
 
-/* Floating Segmented Pill Container */
+.tabs > div:first-child,
+div[data-testid="tabs"] > div:first-child,
 .tab-nav,
-div[role="tablist"],
-div.tab-container[role="tablist"] {
+div[role="tablist"] {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 4px !important;
+    gap: 6px !important;
     background: var(--tab-nav-bg) !important;
     background-color: var(--tab-nav-bg) !important;
     border: 1px solid var(--tab-nav-border) !important;
     border-radius: 9999px !important;
     padding: 5px !important;
-    margin: 0 auto !important;
+    margin: 4px auto 26px auto !important;
     width: fit-content !important;
     max-width: fit-content !important;
     backdrop-filter: blur(24px) !important;
@@ -1808,6 +1804,11 @@ div.tab-container[role="tablist"] {
     position: relative !important;
     z-index: 10 !important;
     transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.tabs > div.tabitem,
+div[data-testid="tabs"] > div.tabitem {
+    width: 100% !important;
 }
 
 .tab-nav::-webkit-scrollbar,
@@ -1842,12 +1843,20 @@ div.tab-container[role="tablist"] button[role="tab"] {
     box-shadow: none !important;
 }
 
-/* Hide unwanted Gradio overflow '...' dropdown */
-.tab-nav > button:not([role="tab"]),
-button.tab-nav-more,
+/* Hide unwanted Gradio overflow dropdown button */
+button[aria-label="More"],
+button[aria-label="More tabs"],
+.tab-nav-more,
 .tab-more-btn,
-div[role="tablist"] > button:not([role="tab"]) {
+div[role="tablist"] > button:not([role="tab"]),
+.tab-nav > button:not([role="tab"]) {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* Inactive Tab Hover */
@@ -1857,6 +1866,7 @@ div.tab-container[role="tablist"] button[role="tab"]:hover:not(.selected):not([a
     color: var(--tab-btn-hover-color) !important;
     background: var(--tab-btn-hover-bg) !important;
     border-color: var(--border-subtle) !important;
+    transform: translateY(-1px) !important;
 }
 
 /* Active / Selected Tab Pill */
@@ -2619,13 +2629,12 @@ label[data-testid="block-label"],
     color: #ef4444 !important;
     -webkit-text-fill-color: #ef4444 !important;
 }
-
 /* ─── Tab 2 Input Cards & Action Row Perfect Alignment ───────────────────── */
 #tab2-inputs-row {
     display: flex !important;
     gap: 16px !important;
     margin-bottom: 8px !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
 }
 
 #file-upload,
@@ -2647,84 +2656,106 @@ div[data-testid="textbox"]#url-input-box {
     display: flex !important;
     flex-direction: column !important;
     background: var(--card-bg) !important;
-}load tr:hover,
-.file-preview tr:hover,
-.file-preview-holder tr:hover,
-.file-preview-holder .file:hover {
-    background: var(--dropdown-item-hover-bg) !important;
-    border-color: var(--border-focus) !important;
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+    box-shadow: var(--card-shadow) !important;
 }
 
-#file-upload td.filename,
-.file-preview td.filename,
-.file-preview-holder td.filename,
-.file-preview-holder .filename {
-    padding: 8px 12px !important;
+#url-input-box label {
+    margin-bottom: 6px !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+#url-input-box textarea {
+    height: 110px !important;
+    min-height: 110px !important;
+    resize: none !important;
+    box-sizing: border-box !important;
+    background: var(--input-bg) !important;
+    background-color: var(--input-bg) !important;
     color: var(--text-primary) !important;
     -webkit-text-fill-color: var(--text-primary) !important;
-    font-weight: 500 !important;
-    font-size: 0.9rem !important;
-    border: none !important;
-}
-
-#file-upload td.download,
-.file-preview td.download,
-.file-preview-holder td.download {
-    padding: 8px 12px !important;
-    text-align: right !important;
-    border: none !important;
-}
-
-#file-upload a.download-link,
-#file-upload .download-link,
-.file-preview-holder .download-link {
-    color: var(--accent-green) !important;
-    -webkit-text-fill-color: var(--accent-green) !important;
-    font-weight: 600 !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 8px !important;
+    padding: 10px 12px !important;
     font-family: var(--font-mono) !important;
     font-size: 0.85rem !important;
-    text-decoration: none !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 4px !important;
+    line-height: 1.4 !important;
+    box-shadow: var(--input-shadow) !important;
 }
 
-#file-upload a.download-link:hover {
-    color: var(--accent-blue) !important;
-    -webkit-text-fill-color: var(--accent-blue) !important;
-    text-decoration: underline !important;
-}
-
-#file-upload button[aria-label="Remove file"],
-#file-upload button[aria-label="Delete"],
-#file-upload button[aria-label="Clear"],
-#file-upload .clear-button,
-.file-preview-holder button {
-    color: var(--text-secondary) !important;
-    -webkit-text-fill-color: var(--text-secondary) !important;
-}
-
-#file-upload button[aria-label="Remove file"]:hover,
-#file-upload button[aria-label="Delete"]:hover,
-#file-upload button[aria-label="Clear"]:hover,
-.file-preview-holder button:hover {
-    color: #ef4444 !important;
-    -webkit-text-fill-color: #ef4444 !important;
-}
-
-/* ─── Tab 2 Input Cards & Action Row Perfect Alignment ───────────────────── */
-#tab2-inputs-row {
+#ingest-action-row {
     display: flex !important;
+    align-items: center !important;
     gap: 16px !important;
-    margin-bottom: 8px !important;
-    align-items: flex-start !important;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
 }
 
-#file-upload,
-div[data-testid="file-upload"]#file-upload {
-    height: 160px !important;
-    min-height: 160px !important;
-    max-height: 160px !important;
+#append-toggle,
+#append-toggle.block,
+div[data-testid="checkbox"]#append-toggle {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: var(--card-bg) !important;
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: all 0.2s ease !important;
+}
+
+#append-toggle:hover {
+    border-color: var(--accent-blue) !important;
+}
+
+#append-toggle label,
+#append-toggle label.checkbox-container,
+#append-toggle .checkbox-container {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 12px !important;
+    width: 100% !important;
+    height: 100% !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--text-primary) !important;
+}
+
+.nav-hint-banner {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    border-radius: 12px !important;
+    padding: 12px 18px !important;
+    color: #047857 !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    margin: 12px 0 !important;
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.10) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+body.dark .nav-hint-banner, .dark .nav-hint-banner {
+    color: #34d399 !important;
+    background: rgba(16, 185, 129, 0.16) !important;
+    border-color: rgba(52, 211, 153, 0.40) !important;
+}ax-height: 160px !important;
     box-sizing: border-box !important;
     margin-bottom: 0 !important;
 }
@@ -3770,7 +3801,7 @@ with gr.Blocks(
                         label="Drag & Drop Files Here (PDF / CSV / XLSX / XLS / TXT / MD)",
                         file_types=[".pdf", ".csv", ".xlsx", ".xls", ".txt", ".md", ".json"],
                         file_count="multiple",
-                        height=160,
+                        height=185,
                         elem_id="file-upload",
                     )
                 with gr.Column(scale=1, min_width=300):
@@ -3794,8 +3825,8 @@ with gr.Blocks(
                         btn_ingest = gr.Button("⚡ Ingest & Index All Knowledge Sources", variant="primary", scale=3, elem_id="btn-ingest")
                         btn_reset_kb = gr.Button("🗑️ Reset Knowledge Base", variant="secondary", scale=2, elem_id="btn-reset-kb")
 
-            nav_hint = gr.Markdown(
-                "✅ **Knowledge Base Ready!** Switch to the **💬 Chat with Documents** tab to ask cross-source questions in real time.",
+            nav_hint = gr.HTML(
+                value='<div class="nav-hint-banner">🎉 <b>Knowledge Base Ready!</b> Switch to the <b>💬 Chat with Documents</b> tab to ask cross-source questions in real time.</div>',
                 visible=False,
             )
 
@@ -3818,7 +3849,7 @@ with gr.Blocks(
             with gr.Column():
                 chatbot = gr.Chatbot(
                     label="Conversation",
-                    height=580,
+                    height=480,
                     layout="bubble",
                     type="messages",
                     render_markdown=True,
