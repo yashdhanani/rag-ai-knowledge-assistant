@@ -1795,15 +1795,23 @@ div.tab-container[role="tablist"] {
     border: 1px solid var(--tab-nav-border) !important;
     border-radius: 9999px !important;
     padding: 5px !important;
-    margin: 4px auto 32px auto !important;
-    width: fit-content !important;
-    max-width: fit-content !important;
+    margin: 4px auto 28px auto !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    box-sizing: border-box !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
     box-shadow: var(--tab-nav-shadow) !important;
     position: relative !important;
     z-index: 10 !important;
     transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.tab-nav::-webkit-scrollbar,
+div[role="tablist"]::-webkit-scrollbar {
+    display: none !important;
 }
 
 /* Tab Item Buttons */
@@ -3305,36 +3313,83 @@ div.tab-container.visually-hidden {
 /* Tablets and Large Phones (max-width: 768px) */
 @media (max-width: 768px) {
     .gradio-container {
-        padding: 12px 10px 28px !important;
+        padding: 10px 8px 24px !important;
     }
     
     #header-container {
-        padding: 20px 14px 16px !important;
+        padding: 52px 14px 18px !important;
         border-radius: 16px !important;
         margin-bottom: 16px !important;
+        position: relative !important;
+    }
+    
+    #theme-toggle-btn {
+        top: 12px !important;
+        right: 12px !important;
+        padding: 5px 12px !important;
+        font-size: 0.76rem !important;
     }
     
     #header-container h1 {
-        font-size: 1.55rem !important;
+        font-size: 1.35rem !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        margin: 0 0 8px !important;
+    }
+    
+    #header-container .header-logo-icon {
+        font-size: 2.2rem !important;
+    }
+    
+    #header-container .header-title-text {
+        font-size: 1.35rem !important;
+        text-align: center !important;
     }
     
     #header-container p {
-        font-size: 0.84rem !important;
+        font-size: 0.82rem !important;
         margin-bottom: 12px !important;
+        padding: 0 4px !important;
+    }
+    
+    .header-badges-row {
+        gap: 6px !important;
+        justify-content: center !important;
     }
     
     .badge-tag {
-        font-size: 0.76rem !important;
+        font-size: 0.74rem !important;
         padding: 4px 10px !important;
     }
     
-    .tab-container button, .tab-wrapper button, button[role="tab"] {
-        padding: 8px 14px !important;
-        font-size: 0.84rem !important;
+    .tab-wrapper {
+        margin: 4px auto 16px auto !important;
+    }
+    
+    .tab-nav,
+    div[role="tablist"],
+    div.tab-container[role="tablist"] {
+        border-radius: 14px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+        padding: 4px !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .tab-nav button,
+    .tab-container button,
+    .tab-wrapper button,
+    button[role="tab"],
+    div.tab-container[role="tablist"] button[role="tab"] {
+        padding: 7px 12px !important;
+        font-size: 0.78rem !important;
+        flex-shrink: 0 !important;
+        border-radius: 10px !important;
     }
     
     /* Stack form rows cleanly on mobile */
-    .row {
+    .row, #tab1-main-row, #api-key-input-row {
         flex-direction: column !important;
         gap: 12px !important;
     }
@@ -3370,8 +3425,8 @@ div.tab-container.visually-hidden {
     #btn-reset-kb, button#btn-reset-kb,
     .lg.secondary, button.lg.secondary {
         width: 100% !important;
-        min-height: 48px !important;
-        font-size: 0.95rem !important;
+        min-height: 46px !important;
+        font-size: 0.92rem !important;
         justify-content: center !important;
     }
     
@@ -3395,20 +3450,23 @@ div.tab-container.visually-hidden {
 /* Compact Smartphones (max-width: 480px) */
 @media (max-width: 480px) {
     .gradio-container {
-        padding: 8px 6px 20px !important;
+        padding: 8px 4px 18px !important;
     }
     #header-container {
-        padding: 16px 10px 14px !important;
+        padding: 50px 10px 14px !important;
     }
     #header-container h1 {
-        font-size: 1.35rem !important;
+        font-size: 1.22rem !important;
+    }
+    #header-container .header-title-text {
+        font-size: 1.22rem !important;
     }
     #header-container p {
-        font-size: 0.78rem !important;
+        font-size: 0.76rem !important;
     }
-    .tab-container button, .tab-wrapper button, button[role="tab"] {
-        padding: 7px 10px !important;
-        font-size: 0.78rem !important;
+    .tab-nav button, .tab-container button, .tab-wrapper button, button[role="tab"] {
+        padding: 6px 10px !important;
+        font-size: 0.74rem !important;
     }
 }
 
@@ -3573,8 +3631,8 @@ with gr.Blocks(
         primary_hue="sky",
         secondary_hue="emerald",
         neutral_hue="slate",
-        font=[gr.themes.GoogleFont("Plus Jakarta Sans"), "system-ui", "sans-serif"],
-        font_mono=[gr.themes.GoogleFont("JetBrains Mono"), "monospace"],
+        font=[gr.themes.GoogleFont("Plus Jakarta Sans")],
+        font_mono=[gr.themes.GoogleFont("JetBrains Mono")],
     ),
     css=CSS,
     js=CUSTOM_JS,
