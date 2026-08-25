@@ -16,11 +16,20 @@ short_description: Multi-Modal Hybrid RAG Knowledge Assistant with NVIDIA NIM
 > An enterprise-grade, multi-modal **Retrieval-Augmented Generation (RAG)** pipeline designed for multi-format document ingestion (PDF, CSV, Excel, TXT, Markdown) and live web scraping with **Hybrid Search (FAISS + BM25)**, **Zero-Hallucination Guardrails**, and real-time streaming citations powered by **NVIDIA NIM LLMs**.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Demo-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/dhananiyash9/rag-ai-knowledge-assistant)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yashdhanani/rag-ai-knowledge-assistant)
 [![NVIDIA NIM](https://img.shields.io/badge/NVIDIA-NIM%20API-76b900.svg)](https://build.nvidia.com/)
 [![FAISS](https://img.shields.io/badge/Vector%20Store-FAISS%20Dense-purple.svg)](https://github.com/facebookresearch/faiss)
 [![BM25](https://img.shields.io/badge/Lexical%20Search-BM25%20Rank-orange.svg)](https://github.com/dorianbrown/rank_bm25)
 [![Gradio](https://img.shields.io/badge/UI-Gradio%205-FF7C00.svg)](https://gradio.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
+
+### 🌐 Live Interactive Demo
+🚀 **Try the live app directly in your browser:**  
+👉 **[https://huggingface.co/spaces/dhananiyash9/rag-ai-knowledge-assistant](https://huggingface.co/spaces/dhananiyash9/rag-ai-knowledge-assistant)**  
+*(Bring Your Own Free NVIDIA API Key & Test with your documents!)*
 
 ---
 
