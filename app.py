@@ -2603,7 +2603,8 @@ label[data-testid="block-label"],
 }
 
 #file-upload table.file-preview,
-.file-preview table {
+.file-preview table,
+.file-preview-holder table {
     width: 100% !important;
     border-collapse: separate !important;
     border-spacing: 0 4px !important;
@@ -2612,40 +2613,52 @@ label[data-testid="block-label"],
 }
 
 #file-upload tr.file,
-.file-preview tr {
-    background: #0d1527 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+#file-upload tr,
+.file-preview tr,
+.file-preview-holder tr,
+.file-preview-holder .file,
+.file-preview-holder .file-item {
+    background: var(--input-bg) !important;
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--border-subtle) !important;
     border-radius: 8px !important;
     transition: background 0.15s ease !important;
 }
 
 #file-upload tr.file:hover,
-.file-preview tr:hover {
-    background: rgba(56, 189, 248, 0.12) !important;
-    border-color: rgba(56, 189, 248, 0.25) !important;
+#file-upload tr:hover,
+.file-preview tr:hover,
+.file-preview-holder tr:hover,
+.file-preview-holder .file:hover {
+    background: var(--dropdown-item-hover-bg) !important;
+    border-color: var(--border-focus) !important;
 }
 
 #file-upload td.filename,
-.file-preview td.filename {
+.file-preview td.filename,
+.file-preview-holder td.filename,
+.file-preview-holder .filename {
     padding: 8px 12px !important;
-    color: #f1f5f9 !important;
-    -webkit-text-fill-color: #f1f5f9 !important;
+    color: var(--text-primary) !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
     font-weight: 500 !important;
     font-size: 0.9rem !important;
     border: none !important;
 }
 
 #file-upload td.download,
-.file-preview td.download {
+.file-preview td.download,
+.file-preview-holder td.download {
     padding: 8px 12px !important;
     text-align: right !important;
     border: none !important;
 }
 
 #file-upload a.download-link,
-#file-upload .download-link {
-    color: #34d399 !important;
-    -webkit-text-fill-color: #34d399 !important;
+#file-upload .download-link,
+.file-preview-holder .download-link {
+    color: var(--accent-green) !important;
+    -webkit-text-fill-color: var(--accent-green) !important;
     font-weight: 600 !important;
     font-family: var(--font-mono) !important;
     font-size: 0.85rem !important;
@@ -2656,9 +2669,26 @@ label[data-testid="block-label"],
 }
 
 #file-upload a.download-link:hover {
-    color: #6ee7b7 !important;
-    -webkit-text-fill-color: #6ee7b7 !important;
+    color: var(--accent-blue) !important;
+    -webkit-text-fill-color: var(--accent-blue) !important;
     text-decoration: underline !important;
+}
+
+#file-upload button[aria-label="Remove file"],
+#file-upload button[aria-label="Delete"],
+#file-upload button[aria-label="Clear"],
+#file-upload .clear-button,
+.file-preview-holder button {
+    color: var(--text-secondary) !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
+}
+
+#file-upload button[aria-label="Remove file"]:hover,
+#file-upload button[aria-label="Delete"]:hover,
+#file-upload button[aria-label="Clear"]:hover,
+.file-preview-holder button:hover {
+    color: #ef4444 !important;
+    -webkit-text-fill-color: #ef4444 !important;
 }
 
 /* ─── Tab 2 Input Cards & Action Row Perfect Alignment ───────────────────── */
