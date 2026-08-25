@@ -1,0 +1,5 @@
+Department,ProjectName,Quarter,BudgetUSD,LeadEngineer,KeyTechnology
+AI Research,Project Antigravity,Q1 2026,1200000,Dr. Sarah Chen,Retrieval-Augmented Generation & FAISS
+Cloud Platform,Project HyperScale,Q2 2026,850000,Marcus Vance,Kubernetes & Ray Distributed Clusters
+Security & Compliance,Zero Trust Shield,Q1 2026,450000,Elena Rostova,Cryptographic Guardrails & IAM
+Data Engineering,Realtime Lakehouse,Q3 2026,950000,Aiden Patel,Apache Iceberg & BM25 Sparse Index

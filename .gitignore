@@ -1,0 +1,64 @@
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# Local Vector Indices & Data Stores (Created at runtime)
+rag_faiss.index
+rag_chunks.pkl
+rag_manifest.pkl
+sample_rag.db
+*.index
+*.pkl
+*.db
+*.sqlite3
+
+# Test & Debug Screenshots
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.log
+
+# IDE & OS Artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
