@@ -3727,23 +3727,27 @@ with gr.Blocks(
         fn=cb_configure_api,
         inputs=[api_key_input, model_dropdown],
         outputs=[api_status_msg],
+        show_api=False,
     )
 
     model_dropdown.change(
         fn=cb_update_model,
         inputs=[model_dropdown],
         outputs=[model_status_msg],
+        show_api=False,
     )
 
     btn_ingest.click(
         fn=cb_unified_ingest,
         inputs=[file_upload, url_input_box, append_toggle],
         outputs=[log_output, manifest_display, nav_hint],
+        show_api=False,
     )
 
     btn_reset_kb.click(
         fn=cb_clear_knowledge_base,
         outputs=[log_output, manifest_display, nav_hint],
+        show_api=False,
     )
 
     # Streaming Chat Event
@@ -3751,14 +3755,16 @@ with gr.Blocks(
         fn=cb_chat_stream,
         inputs=[msg_input, chatbot],
         outputs=[chatbot, msg_input],
+        show_api=False,
     )
     msg_input.submit(
         fn=cb_chat_stream,
         inputs=[msg_input, chatbot],
         outputs=[chatbot, msg_input],
+        show_api=False,
     )
 
-    btn_clear.click(fn=cb_clear_chat, outputs=[chatbot])
+    btn_clear.click(fn=cb_clear_chat, outputs=[chatbot], show_api=False)
 
 
 # ─── Entry Point ───────────────────────────────────────────────────────────────
@@ -3787,5 +3793,6 @@ if __name__ == "__main__":
         server_port=7860,
         share=False,
         show_error=True,
+        show_api=False,
         inbrowser=True,
     )
