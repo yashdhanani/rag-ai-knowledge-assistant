@@ -28,6 +28,12 @@ import faiss
 from openai import OpenAI
 import gradio as gr
 
+try:
+    import spaces
+    HAS_SPACES = True
+except ImportError:
+    HAS_SPACES = False
+
 # ─── Optional Data-Source Libraries ──────────────────────────────────────────
 try:
     import pandas as pd
@@ -522,7 +528,7 @@ def get_embedding_model() -> SentenceTransformer:
     return _embedding_model
 
 
-def embed_texts(texts: List[str], show_progress: bool = False) -> np.ndarray:
+def _base_embed_texts(texts: List[str], show_progress: bool = False) -> np.ndarray:
     model = get_embedding_model()
     embs = model.encode(
         texts,
@@ -531,6 +537,11 @@ def embed_texts(texts: List[str], show_progress: bool = False) -> np.ndarray:
         normalize_embeddings=True,
     )
     return np.ascontiguousarray(embs, dtype=np.float32)
+
+if HAS_SPACES:
+    embed_texts = spaces.GPU(_base_embed_texts)
+else:
+    embed_texts = _base_embed_texts
 
 
 def build_faiss_index(embeddings: np.ndarray) -> faiss.IndexFlatIP:
