@@ -868,14 +868,14 @@ def render_manifest_table_html(manifest: Dict) -> str:
 
     html = [f'''
     <div class="custom-table-card">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(15,23,42,0.6);">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--card-border); background: var(--input-bg);">
             <div style="display: flex; gap: 10px; align-items: center;">
-                <span style="font-weight: 700; color: #f8fafc; font-size: 0.95rem;">📚 Active Knowledge Inventory</span>
+                <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">📚 Active Knowledge Inventory</span>
                 <span class="badge badge-cyan">{total_sources} Source{'s' if total_sources != 1 else ''}</span>
                 <span class="badge badge-purple">{total_chunks} Total Chunks</span>
             </div>
-            <div style="font-size: 0.8rem; color: #94a3b8;">
-                Hybrid Search: <b style="color: #34d399;">Active (FAISS + BM25)</b>
+            <div style="font-size: 0.8rem; color: var(--text-secondary);">
+                Hybrid Search: <b style="color: var(--accent-green);">Active (FAISS + BM25)</b>
             </div>
         </div>
         <table class="custom-eval-table">
@@ -907,10 +907,10 @@ def render_manifest_table_html(manifest: Dict) -> str:
 
         html.append(f'''
         <tr>
-            <td style="font-weight: 600; color: #f1f5f9;">{icon} {name}</td>
+            <td style="font-weight: 600; color: var(--text-primary);">{icon} {name}</td>
             <td style="text-align: center;"><span class="badge {type_badge_class}">{doc_type}</span></td>
-            <td style="text-align: center; color: #94a3b8;">{pages}</td>
-            <td style="text-align: center; color: #38bdf8; font-weight: 600;">{chunks}</td>
+            <td style="text-align: center; color: var(--text-secondary);">{pages}</td>
+            <td style="text-align: center; color: var(--accent-blue); font-weight: 600;">{chunks}</td>
             <td style="text-align: center;"><span class="badge badge-green">🟢 Ready ({date_str})</span></td>
         </tr>
         ''')
@@ -3162,11 +3162,12 @@ div[data-testid="textbox"]#msg-input,
 }
 
 .custom-eval-table th {
-    background: rgba(15, 23, 42, 0.95) !important;
-    color: #94a3b8 !important;
+    background: var(--input-bg) !important;
+    color: var(--text-secondary) !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
     font-weight: 700 !important;
     padding: 13px 18px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid var(--card-border) !important;
     text-transform: uppercase !important;
     font-size: 0.75rem !important;
     letter-spacing: 0.06em !important;
@@ -3174,13 +3175,15 @@ div[data-testid="textbox"]#msg-input,
 
 .custom-eval-table th:first-child,
 .custom-eval-table td:first-child {
-    border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-right: 1px solid var(--card-border) !important;
 }
 
 .custom-eval-table td {
     padding: 11px 18px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
-    color: #cbd5e1 !important;
+    border-bottom: 1px solid var(--card-border) !important;
+    color: var(--text-primary) !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    font-weight: 500 !important;
     transition: background 0.15s ease !important;
 }
 
@@ -3189,7 +3192,7 @@ div[data-testid="textbox"]#msg-input,
 }
 
 .custom-eval-table tr:hover td {
-    background: rgba(56, 189, 248, 0.04) !important;
+    background: var(--dropdown-item-hover-bg) !important;
 }
 
 /* Badges */
@@ -3757,6 +3760,7 @@ with gr.Blocks(
                     label="Conversation",
                     height=580,
                     layout="bubble",
+                    type="messages",
                     render_markdown=True,
                     show_label=False,
                     elem_id="chatbot-box",
