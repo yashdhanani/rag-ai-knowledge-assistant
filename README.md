@@ -1,16 +1,3 @@
----
-title: RAG AI Knowledge Assistant
-emoji: 🤖
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-sdk_version: 5.16.0
-app_file: app.py
-pinned: false
-license: mit
-short_description: Multi-Modal Hybrid RAG Knowledge Assistant with NVIDIA NIM
----
-
 <div align="center">
 
 # 🤖 RAG AI Knowledge Assistant
