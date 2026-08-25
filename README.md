@@ -1,3 +1,16 @@
+---
+title: RAG AI Knowledge Assistant
+emoji: 🤖
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 5.20.0
+app_file: app.py
+pinned: false
+license: mit
+short_description: Multi-Modal Hybrid RAG Knowledge Assistant with NVIDIA NIM
+---
+
 # 🤖 RAG AI Knowledge Assistant (2026 Production Edition)
 
 > An enterprise-grade, multi-modal **Retrieval-Augmented Generation (RAG)** pipeline designed for multi-format document ingestion (PDF, CSV, Excel, TXT, Markdown) and live web scraping with **Hybrid Search (FAISS + BM25)**, **Zero-Hallucination Guardrails**, and real-time streaming citations powered by **NVIDIA NIM LLMs**.
