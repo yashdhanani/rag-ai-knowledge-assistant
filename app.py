@@ -2310,126 +2310,19 @@ button, .gr-button {
     backdrop-filter: blur(16px) !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
-    gap: 16px !important;
-    min-height: 210px !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    z-index: 1000 !important;
-    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
-}
-
-.tab1-card .block,
-.tab1-card div[class*="block"] {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.tab1-card-header {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 2px;
-}
-
-.tab1-card-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-primary) !important;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.tab1-card-desc {
-    font-size: 0.84rem;
-    color: var(--text-secondary) !important;
-    line-height: 1.4;
-}
-
-#api-key-input-row,
-#model-select-row {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#api-key-input-row > div:first-child {
-    flex: 1 1 auto !important;
-}
-
-#api-key-input,
-#api-key-input.block,
-#api-key-input .wrap {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-#api-key-input input {
-    height: 48px !important;
-    min-height: 48px !important;
-    background: var(--input-bg) !important;
-    background-color: var(--input-bg) !important;
-    border: 1px solid var(--input-border) !important;
-    border-radius: 12px !important;
-    color: var(--input-color) !important;
-    -webkit-text-fill-color: var(--input-color) !important;
-    padding: 0 16px !important;
-    font-size: 0.94rem !important;
-    box-sizing: border-box !important;
-    box-shadow: var(--input-shadow) !important;
-    transition: all 0.2s ease !important;
-}
-
-#api-key-input input:focus {
-    border-color: var(--accent-blue) !important;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22), var(--input-shadow) !important;
-}
-
-.tab1-status-pill,
-.tab1-status-pill.block,
-#api-status-msg.block,
-#model-status-msg.block {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    min-height: auto !important;
-}
-
-.status-badge-row {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    flex-wrap: wrap !important;
-    min-height: 32px !important;
-}
-
-/* ─── File Upload Outer Component ────────────────────────────────────────── */
+    justify-content: space-between !imp/* ─── File Upload Outer Component ────────────────────────────────────────── */
 #file-upload,
 div[data-testid="file-upload"] {
     background: var(--input-bg) !important;
     background-color: var(--input-bg) !important;
-    border: 1px dashed var(--accent-blue) !important;
+    border: 1.5px dashed var(--accent-blue) !important;
     border-radius: 14px !important;
     color: var(--text-primary) !important;
     overflow: hidden !important;
     position: relative !important;
-    min-height: 160px !important;
-    height: 160px !important;
+    min-height: 185px !important;
+    height: auto !important;
+    max-height: 240px !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
     box-shadow: var(--input-shadow) !important;
@@ -2438,7 +2331,7 @@ div[data-testid="file-upload"] {
 
 #file-upload:hover {
     border-color: var(--accent-blue) !important;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22), var(--input-shadow) !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.20), var(--input-shadow) !important;
 }
 
 /* Floating label on top of file upload */
@@ -2453,18 +2346,24 @@ label[data-testid="block-label"],
     -webkit-text-fill-color: var(--accent-blue) !important;
     border: 1px solid var(--border-subtle) !important;
     border-radius: 8px !important;
-    padding: 2px 10px !important;
-    font-size: 0.82rem !important;
+    padding: 3px 12px !important;
+    font-size: 0.80rem !important;
+    font-weight: 600 !important;
     cursor: pointer !important;
     pointer-events: none !important;
     user-select: none !important;
+    position: absolute !important;
+    top: 8px !important;
+    left: 10px !important;
+    z-index: 15 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Main empty dropzone button (only when no file is uploaded) */
 #file-upload button.center.boundedheight:not(.icon-mode):not(.icon-button),
 #file-upload .upload-container {
     width: 100% !important;
-    min-height: 160px !important;
+    min-height: 185px !important;
     height: 100% !important;
     background: transparent !important;
     background-color: transparent !important;
@@ -2476,7 +2375,7 @@ label[data-testid="block-label"],
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
-    padding: 20px 10px !important;
+    padding: 24px 12px !important;
     color: var(--text-primary) !important;
 }
 
@@ -2513,22 +2412,22 @@ label[data-testid="block-label"],
 #file-upload button.icon-button,
 #file-upload .icon-button {
     position: relative !important;
-    background: rgba(15, 23, 42, 0.85) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 6px !important;
-    width: 28px !important;
-    height: 28px !important;
-    min-height: 28px !important;
-    max-height: 28px !important;
-    min-width: 28px !important;
-    max-width: 28px !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 8px !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
     padding: 0 !important;
     margin: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: #94a3b8 !important;
-    box-shadow: none !important;
+    color: var(--text-secondary) !important;
+    box-shadow: var(--card-shadow) !important;
     cursor: pointer !important;
     transition: all 0.15s ease !important;
 }
@@ -2548,9 +2447,9 @@ label[data-testid="block-label"],
 #file-upload button.icon-button:hover,
 #file-upload button.icon-button[aria-label="common.upload"]:hover,
 #file-upload button.icon-button[title="common.upload"]:hover {
-    border-color: #38bdf8 !important;
-    color: #38bdf8 !important;
-    background: rgba(56, 189, 248, 0.18) !important;
+    border-color: var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+    background: var(--dropdown-item-hover-bg) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -2558,7 +2457,7 @@ label[data-testid="block-label"],
 #file-upload button.icon-button[title="Clear"]:hover {
     border-color: rgba(239, 68, 68, 0.5) !important;
     color: #f87171 !important;
-    background: rgba(239, 68, 68, 0.2) !important;
+    background: rgba(239, 68, 68, 0.15) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -2594,12 +2493,26 @@ label[data-testid="block-label"],
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    max-height: 160px !important;
-    height: 160px !important;
+    min-height: 130px !important;
+    max-height: 185px !important;
+    height: auto !important;
     overflow-y: auto !important;
-    padding: 34px 10px 10px 10px !important;
+    padding: 42px 10px 10px 10px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+}
+
+#file-upload .file-preview-holder::-webkit-scrollbar {
+    width: 5px !important;
+}
+
+#file-upload .file-preview-holder::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+#file-upload .file-preview-holder::-webkit-scrollbar-thumb {
+    background: var(--border-focus) !important;
+    border-radius: 4px !important;
 }
 
 #file-upload table.file-preview,
@@ -2607,7 +2520,7 @@ label[data-testid="block-label"],
 .file-preview-holder table {
     width: 100% !important;
     border-collapse: separate !important;
-    border-spacing: 0 4px !important;
+    border-spacing: 0 5px !important;
     background: transparent !important;
     border: none !important;
 }
@@ -2618,15 +2531,112 @@ label[data-testid="block-label"],
 .file-preview-holder tr,
 .file-preview-holder .file,
 .file-preview-holder .file-item {
-    background: var(--input-bg) !important;
-    background-color: var(--input-bg) !important;
-    border: 1px solid var(--border-subtle) !important;
-    border-radius: 8px !important;
-    transition: background 0.15s ease !important;
+    background: var(--card-bg) !important;
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 9px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.15s ease !important;
 }
 
 #file-upload tr.file:hover,
 #file-upload tr:hover,
+.file-preview tr:hover,
+.file-preview-holder tr:hover,
+.file-preview-holder .file:hover {
+    background: var(--dropdown-item-hover-bg) !important;
+    border-color: var(--border-focus) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+#file-upload td.filename,
+.file-preview td.filename,
+.file-preview-holder td.filename,
+.file-preview-holder .filename {
+    padding: 8px 12px !important;
+    color: var(--text-primary) !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    border: none !important;
+}
+
+#file-upload td.download,
+.file-preview td.download,
+.file-preview-holder td.download {
+    padding: 8px 12px !important;
+    text-align: right !important;
+    border: none !important;
+}
+
+#file-upload a.download-link,
+#file-upload .download-link,
+.file-preview-holder .download-link {
+    color: var(--accent-green) !important;
+    -webkit-text-fill-color: var(--accent-green) !important;
+    font-weight: 600 !important;
+    font-family: var(--font-mono) !important;
+    font-size: 0.82rem !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+#file-upload a.download-link:hover {
+    color: var(--accent-blue) !important;
+    -webkit-text-fill-color: var(--accent-blue) !important;
+    text-decoration: underline !important;
+}
+
+#file-upload button[aria-label="Remove file"],
+#file-upload button[aria-label="Delete"],
+#file-upload button[aria-label="Clear"],
+#file-upload .clear-button,
+.file-preview-holder button {
+    color: var(--text-secondary) !important;
+    -webkit-text-fill-color: var(--text-secondary) !important;
+    cursor: pointer !important;
+    transition: color 0.15s ease !important;
+}
+
+#file-upload button[aria-label="Remove file"]:hover,
+#file-upload button[aria-label="Delete"]:hover,
+#file-upload button[aria-label="Clear"]:hover,
+.file-preview-holder button:hover {
+    color: #ef4444 !important;
+    -webkit-text-fill-color: #ef4444 !important;
+}
+
+/* ─── Tab 2 Input Cards & Action Row Perfect Alignment ───────────────────── */
+#tab2-inputs-row {
+    display: flex !important;
+    gap: 16px !important;
+    margin-bottom: 8px !important;
+    align-items: flex-start !important;
+}
+
+#file-upload,
+div[data-testid="file-upload"]#file-upload {
+    height: auto !important;
+    min-height: 185px !important;
+    max-height: 240px !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0 !important;
+}
+
+#url-input-box,
+div[data-testid="textbox"]#url-input-box {
+    height: auto !important;
+    min-height: 185px !important;
+    max-height: 240px !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: var(--card-bg) !important;
+}load tr:hover,
 .file-preview tr:hover,
 .file-preview-holder tr:hover,
 .file-preview-holder .file:hover {
