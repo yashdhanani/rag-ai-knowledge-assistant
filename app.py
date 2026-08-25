@@ -3691,7 +3691,6 @@ with gr.Blocks(
                     render_markdown=True,
                     show_label=False,
                     elem_id="chatbot-box",
-                    buttons=[],
                     placeholder=(
                         "### 👋 Welcome to your 2026 RAG AI Knowledge Assistant!\n\n"
                         "1. **Unified Multi-Source Knowledge**: In the **Upload & Ingest Knowledge** tab, upload **PDF**, **CSV**, **Excel** files and/or enter **Website URLs**.\n"
