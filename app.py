@@ -1727,14 +1727,30 @@ body.dark .badge-ingest, .dark .badge-ingest, [data-theme="dark"] .badge-ingest 
 /* ─── Modern Segmented Navigation Tabs ─────────────────────────────────── */
 .tabs,
 div[data-testid="tabs"],
-div.tabs,
+div.tabs {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Outer Tab Bar Centering Wrapper: Strict ZERO border, ZERO background, ZERO shadow */
+.tabs > div:first-child,
+div[data-testid="tabs"] > div:first-child,
+div.tabs > div:first-child,
 .tab-wrapper,
-.tabitem,
-div.tabitem,
-.tab-container,
-div.tab-container,
-.tabs > div,
-.tabs > div:first-child {
+.tab-nav-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 4px auto 26px auto !important;
+    padding: 0 !important;
     background: transparent !important;
     background-color: transparent !important;
     border: none !important;
@@ -1746,11 +1762,24 @@ div.tab-container,
     outline: none !important;
 }
 
+.tabitem,
+div.tabitem,
+.tabs > div.tabitem,
+div[data-testid="tabs"] > div.tabitem {
+    width: 100% !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
 /* Remove all pseudo-element lines, underlines, and default Gradio dividers */
 .tabs::before,
 .tabs::after,
 .tab-wrapper::before,
 .tab-wrapper::after,
+.tab-nav-wrapper::before,
+.tab-nav-wrapper::after,
 .tab-container::before,
 .tab-container::after,
 .tab-nav::before,
@@ -1771,21 +1800,10 @@ button[role="tab"].selected::after {
     width: 0 !important;
 }
 
-/* Segmented Navigation Tab Pill Group */
-.tabs,
-div[data-testid="tabs"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    background: transparent !important;
-    border: none !important;
-}
-
-.tabs > div:first-child,
-div[data-testid="tabs"] > div:first-child,
+/* Single Floating Segmented Pill Container */
 .tab-nav,
-div[role="tablist"] {
+div[role="tablist"],
+div.tab-container[role="tablist"] {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1795,7 +1813,7 @@ div[role="tablist"] {
     border: 1px solid var(--tab-nav-border) !important;
     border-radius: 9999px !important;
     padding: 5px !important;
-    margin: 4px auto 26px auto !important;
+    margin: 0 auto !important;
     width: fit-content !important;
     max-width: fit-content !important;
     backdrop-filter: blur(24px) !important;
@@ -1804,11 +1822,6 @@ div[role="tablist"] {
     position: relative !important;
     z-index: 10 !important;
     transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
-}
-
-.tabs > div.tabitem,
-div[data-testid="tabs"] > div.tabitem {
-    width: 100% !important;
 }
 
 .tab-nav::-webkit-scrollbar,
