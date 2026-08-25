@@ -2333,9 +2333,10 @@ button, .gr-button {
     flex-direction: column !important;
     justify-content: space-between !imp/* ─── File Upload Outer Component ────────────────────────────────────────── */
 #file-upload,
-div[data-testid="file-upload"] {
-    background: var(--input-bg) !important;
-    background-color: var(--input-bg) !important;
+div[data-testid="file-upload"],
+div[data-testid="file-upload"]#file-upload {
+    background: var(--card-bg) !important;
+    background-color: var(--card-bg) !important;
     border: 1.5px dashed var(--accent-blue) !important;
     border-radius: 14px !important;
     color: var(--text-primary) !important;
@@ -2343,10 +2344,9 @@ div[data-testid="file-upload"] {
     position: relative !important;
     min-height: 185px !important;
     height: auto !important;
-    max-height: 240px !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
-    box-shadow: var(--input-shadow) !important;
+    box-shadow: var(--card-shadow) !important;
     transition: all 0.2s ease !important;
 }
 
@@ -3849,7 +3849,7 @@ with gr.Blocks(
             with gr.Column():
                 chatbot = gr.Chatbot(
                     label="Conversation",
-                    height=480,
+                    height=400,
                     layout="bubble",
                     type="messages",
                     render_markdown=True,
