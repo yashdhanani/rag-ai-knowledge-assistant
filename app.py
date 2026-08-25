@@ -1772,14 +1772,18 @@ button[role="tab"].selected::after {
 }
 
 /* Tab wrapper centering */
-.tab-wrapper {
+.tab-wrapper,
+div.tabs > div:first-child,
+div[data-testid="tabs"] > div:first-child {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    margin: 6px auto 32px auto !important;
+    margin: 4px auto 30px auto !important;
     padding: 0 !important;
     border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Floating Segmented Pill Container */
@@ -1795,12 +1799,9 @@ div.tab-container[role="tablist"] {
     border: 1px solid var(--tab-nav-border) !important;
     border-radius: 9999px !important;
     padding: 5px !important;
-    margin: 4px auto 28px auto !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    width: fit-content !important;
+    max-width: fit-content !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
     box-shadow: var(--tab-nav-shadow) !important;
@@ -1818,18 +1819,20 @@ div[role="tablist"]::-webkit-scrollbar {
 .tab-nav button,
 button[role="tab"],
 div.tab-container[role="tablist"] button[role="tab"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
-    font-size: 0.92rem !important;
+    font-size: 0.90rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.01em !important;
     color: var(--tab-btn-color) !important;
     border-radius: 9999px !important;
-    padding: 9px 24px !important;
+    padding: 9px 22px !important;
     border: 1px solid transparent !important;
     background: transparent !important;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
     cursor: pointer !important;
-    display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
@@ -1837,6 +1840,14 @@ div.tab-container[role="tablist"] button[role="tab"] {
     user-select: none !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+/* Hide unwanted Gradio overflow '...' dropdown */
+.tab-nav > button:not([role="tab"]),
+button.tab-nav-more,
+.tab-more-btn,
+div[role="tablist"] > button:not([role="tab"]) {
+    display: none !important;
 }
 
 /* Inactive Tab Hover */
@@ -3405,19 +3416,28 @@ div.tab-container.visually-hidden {
         padding: 4px 10px !important;
     }
     
-    .tab-wrapper {
-        margin: 4px auto 16px auto !important;
+    .tab-wrapper,
+    div.tabs > div:first-child,
+    div[data-testid="tabs"] > div:first-child {
+        margin: 0 auto 16px auto !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
     }
     
     .tab-nav,
     div[role="tablist"],
     div.tab-container[role="tablist"] {
-        border-radius: 14px !important;
+        border-radius: 9999px !important;
         max-width: 100% !important;
-        width: 100% !important;
-        justify-content: flex-start !important;
+        width: auto !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
         padding: 4px !important;
-        margin-bottom: 16px !important;
+        margin: 0 auto 16px auto !important;
     }
     
     .tab-nav button,
@@ -3426,9 +3446,9 @@ div.tab-container.visually-hidden {
     button[role="tab"],
     div.tab-container[role="tablist"] button[role="tab"] {
         padding: 7px 12px !important;
-        font-size: 0.78rem !important;
+        font-size: 0.76rem !important;
         flex-shrink: 0 !important;
-        border-radius: 10px !important;
+        border-radius: 9999px !important;
     }
     
     /* Stack form rows cleanly on mobile */
