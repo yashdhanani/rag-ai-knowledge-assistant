@@ -10,6 +10,7 @@
 [![FAISS](https://img.shields.io/badge/Vector%20Store-FAISS%20Dense-8A2BE2?style=for-the-badge)](https://github.com/facebookresearch/faiss)
 [![BM25](https://img.shields.io/badge/Lexical%20Search-BM25%20Rank-FF8C00?style=for-the-badge)](https://github.com/dorianbrown/rank_bm25)
 [![Gradio](https://img.shields.io/badge/UI-Gradio%205-F97316?style=for-the-badge&logo=gradio&logoColor=white)](https://gradio.app/)
+[![Buy Me A Coffee](https://img.shields.io/badge/☕%20Buy%20Me%20a%20Coffee-dhananiyash-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dhananiyash)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 
 <br/>
@@ -227,14 +228,24 @@ Contributions, feedback, and feature suggestions are welcome!
 
 ---
 
-## 📄 License
+## 👤 Author & Support
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for complete terms.
+**Yash Dhanani** — AI/ML Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash%20Dhanani-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/yashdhanani/)
+[![GitHub](https://img.shields.io/badge/GitHub-yashdhanani-181717?style=flat-square&logo=github)](https://github.com/yashdhanani)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-dhananiyash-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dhananiyash)
+
+<br/>
+
+<a href="https://www.buymeacoffee.com/dhananiyash" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 48px !important;width: 174px !important;" />
+</a>
 
 ---
 
 <div align="center">
 
-Made with ❤️ by **[Yash Dhanani](https://github.com/yashdhanani)** • Deployed on **[Hugging Face Spaces](https://huggingface.co/spaces/dhananiyash9/rag-ai-knowledge-assistant)**
+Made with ❤️ by **[Yash Dhanani](https://www.linkedin.com/in/yashdhanani/)** • Deployed on **[Hugging Face Spaces](https://huggingface.co/spaces/dhananiyash9/rag-ai-knowledge-assistant)**
 
 </div>
